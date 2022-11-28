@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="black">
+    <button id="btn" >Click me to change background color red</button>
+    
+</body>
+<script>
+    
+    let btn = document.getElementById('btn');
+    var color="black";
+    btn.addEventListener('click', function(){
+        console.log("clicked");
+        if(color=="black"){
+            
+            colorBlack();
+        }
+        else{
+            colorRed();
+        }
+
+    });
+    let colorBlack =function(){
+        
+        document.body.style.backgroundColor="red";
+        btn.innerText="Click me to change background color black";
+        color ="red";
+   }
+   let colorRed=function(){
+    document.body.style.backgroundColor="black";
+        btn.innerText="Click me to change background color black";
+        color ="black";
+   }
+
+</script>
+</html>
