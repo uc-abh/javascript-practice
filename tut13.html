@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: column;
+height: 100px;
+           
+        }
+        .btn{
+            width:200px;
+            padding: 5px;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"> 
+
+        <button class="btn" id="startTime">Click me start time</button>
+        
+        <button class="btn" id="stopTime">Click me to stop time</button>
+        
+        <button class="btn"id="resetTime">Click me to reset time</button>
+        
+        <div id="time"></div>
+    </div>
+</body>
+<script>
+    let startTime=document.getElementById('startTime');
+    let stopTime=document.getElementById('stopTime');
+    let resetTime=document.getElementById('resetTime');
+    let time=document.getElementById('time');
+    let beigntime=0;
+    
+    const input = `
+    <input type="text"
+    id="text" />`;
+    time.textContent=beigntime;
+    time.insertAdjacentHTML('afterbegin', input);
+    let startTimeout;
+
+
+    startTime.addEventListener("click", function(){
+        startTimeout = setInterval(function(){
+            beigntime++;
+            time.textContent=beigntime;
+        },1000)
+    });
+    stopTime.addEventListener("click",function(){
+
+        clearInterval(startTimeout);
+       
+
+
+    });
+    resetTime.addEventListener("click", function(){
+            beigntime=0;
+            clearInterval(startTimeout);
+            time.textContent=beigntime;
+
+    });
+
+</script>
+
+</html>
